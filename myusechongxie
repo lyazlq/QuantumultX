@@ -589,7 +589,7 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show url reject
 # > RRTV_去除首頁廣告
 https://api.rr.tv/v3plus/index/channel\?pageNum=1&position=CHANNEL_INDEX url script-response-body https://codeberg.org/ddgksf2013/Cuttlefish/raw/master/Script/rrtv_json.js
 # > RRTV_去除廣場tab
-^https?:\/\/api\.rr\.tv\/app\/config\/h5NativeBar url script-response-body https://codeberg.orgddgksf2013/Cuttlefish/raw/master/Script/rrtv_json.js
+^https?:\/\/api\.rr\.tv\/app\/config\/h5NativeBar url script-response-body https://codeberg.org/ddgksf2013/Cuttlefish/raw/master/Script/rrtv_json.js
 # > RRTV_去除商城廣告
 ^https?:\/\/api\.rr\.tv\/v3plus\/index\/channel\?pageNum=1&position=CHANNEL_MY url script-response-body https://codeberg.org/ddgksf2013/Cuttlefish/raw/master/Script/rrtv_json.js
 # > RRTV_Ad_List
