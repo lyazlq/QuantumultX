@@ -62,8 +62,12 @@ http-response ^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\? script-
 http-response ^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\? script-path = https://raw.githubusercontent.com/bpxtc/must/refs/heads/main/Scripts/weibo.js, requires-body = true, tag = 移除消息页广告
 
 # 发现页 - 热门微博信息流、搜索列表、热搜提醒、猜你想搜、视频流红包
-http-response ^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_timeline|finder) script-path = https://raw.githubusercontent.com/bpxtc/must/refs/heads/main/Scripts/weibo.js, requires-body = true, tag = 移除发现页广告
-http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path = https://raw.githubusercontent.com/bpxtc/must/refs/heads/main/Scripts/weibo.js, requires-body = true, tag = 移除发现页广告
+# http-response ^https:\/\/api\.weibo\.cn\/2\/search\/(?:container_timeline|finder) script-path = https://raw.githubusercontent.com/bpxtc/must/refs/heads/main/Scripts/weibo.js, requires-body = true, tag = 移除发现页广告
+# http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path = https://raw.githubusercontent.com/bpxtc/must/refs/heads/main/Scripts/weibo.js, requires-body = true, tag = 移除发现页广告
+
+# 微博移除发现页广告
+^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(finder|container_timeline|container_discover)\? Weibo url-and-header script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+
 # 微博热搜页面广告
 ^https?:\/\/m?api\.weibo\.c(n|om)\/2\/(page|flowpage)\? Weibo url-and-header script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
 
@@ -95,8 +99,7 @@ http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path = 
 ^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch Weibo url-and-header reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? Weibo url-and-header reject-dict
 
-# 微博移除发现页广告
-^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(finder|container_timeline|container_discover)\? Weibo url-and-header script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js
+
 
 
 [MITM]
