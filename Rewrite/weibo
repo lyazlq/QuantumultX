@@ -4,6 +4,8 @@
 #!icon = https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/weibo.png
 #!date = 2024-08-28 08:25:20
 
+hostname = *.weibo.cn, *.weibo.com, weibo.com
+
 [Rule]
 # 请求放行
 DOMAIN-SUFFIX, uve.weibo.com, DIRECT
@@ -102,5 +104,4 @@ http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path = 
 
 
 
-[MITM]
-hostname = *.weibo.cn, *.weibo.com, weibo.com
+
