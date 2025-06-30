@@ -1,0 +1,72 @@
+/***********************************
+
+// ==UserScript==
+// @ScriptName        酷我音乐[ VIP+净化 ]
+// @Author            @ddgksf2013
+// @TgChannel         https://t.me/ddgksf2021
+// @Contribute        https://t.me/ddgksf2013_bot
+// @Feedback          📮 ddgksf2013@163.com 📮
+// @UpdateTime        2025-04-25
+// @Attention         使用中若有问题请发邮件！
+// @Suitable          自行观看“# > ”注释内容
+// @Attention         如需引用请注明出处，谢谢合作！
+// @Version           V2.0.46
+// @ScriptURL         https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+// ==/UserScript==
+
+
+1、本重写仅限本人使用，严禁传播或售卖
+2、解锁VIP歌曲，VIP听书，VIP装扮
+3、全面净化去除酷我音乐广告
+4、脚本工作原理为音源替换而非破解
+5、若需要更高音质请付费支持歌手
+6、若酷我播放发热，请关闭广告终结者Anti分流
+
+
+[rewrite_local]
+
+# > 通用广告请求@ddgksf2013
+https?:\/\/vip1\.kuwo\.cn\/vip\/activity\/kwMemberDay url reject-200
+# > 屏蔽热词@ddgksf2013
+https?:\/\/hotword\.kuwo\.cn\/hotword\.s url reject-200
+# > 通用广告请求@ddgksf2013
+https?:\/\/vip1\.kuwo\.cn\/vip_adv\/ url reject-200
+# > 通用广告请求@ddgksf2013
+https?:\/\/wapi\.kuwo\.cn\/openapi\/v1\/app\/pasterAdvert url reject-200
+# > 应用内弹窗及右下角@ddgksf2013
+^https?:\/\/mobilead\.kuwo\.cn\/ url reject-200
+# > 搜索框处理@ddgksf2013
+https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 会员页广告@ddgksf2013
+https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/page\/cells url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 会员页顶部广告tab@ddgksf2013
+https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 开屏广告@ddgksf2013
+https?:\/\/rich\.kuwo\.cn\/AdService url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 数字专辑@ddgksf2013
+^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 听书权限接口1@ddgksf2013
+^https?:\/\/[a-z0-9A-Z]+\.(kuwo|lrts)\.(cn|me)\/a\.p url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 听书权限接口2@ddgksf2013
+^https?:\/\/.*\.kuwo\.cn\/v2\/api\/pay\/vip\/extraVipStatus url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 新版vip接口1@ddgksf2013
+^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip\?op=ui url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 新版vip接口2@ddgksf2013
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/userbase\/vip\?op=get url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 旧版vip接口@ddgksf2013
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip\?(uid|op=ui) url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 皮肤解锁@ddgksf2013
+^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/theme url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 下载接口@ddgksf2013
+^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?ui url script-request-header https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 我的页面卡片@ddgksf2013
+^https?:\/\/appi.kuwo.cn/kuwopay/personal/cells url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+# > 音乐播放接口@ddgksf2013
+^https:\/\/[a-z0-9A-Z]+\.kuwo\.cn\/mobi\.s\?f=kwxs url script-response-body https://gist.githubusercontent.com/ddgksf2013/0f76e952f0c4a2579932f45a209b40c3/raw/mykkmusic.vip.js
+
+
+[mitm]
+
+hostname = *.kuwo.cn, *.lrts.me
+
+***********************************/
